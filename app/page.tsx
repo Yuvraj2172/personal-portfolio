@@ -1,4 +1,4 @@
-"use client";
+
 import Link from "next/link";
 import React from "react";
 import { clsx } from "clsx";
@@ -11,7 +11,7 @@ const pages = [
 ];
 
 const page = () => {
-  const pathname = usePathname();
+  
   return <main>this is the main page</main>;
 };
 

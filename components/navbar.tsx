@@ -55,11 +55,10 @@ export default function Navbar() {
     const yRange = mapRange(0, bounds.height, -1, 1)(relativeY);
     x.set(xRange * 10);
     y.set(yRange * 10);
-    console.log(xRange);
   };
 
   return (
-    <nav className="p-8">
+    <nav className="p-8   ">
       <ul className="flex gap-12">
         <AnimatePresence>
           {pages.map((link) => {
@@ -81,14 +80,19 @@ export default function Navbar() {
               >
                 <MotionLink
                   className={cn(
-                    "font-medium relative rounded-md text-sm py-2 px-4 transition-all duration-500 ease-out hover:bg-slate-200",
+                    "font-medium relative rounded-md text-sm py-2 px-4 transition-all duration-500 ease-out hover:bg-slate-200 ",
                     pathname === link.path ? "bg-slate-300" : ""
                   )}
                   href={link.path}
                 >
                   <motion.span
                     style={{ x: textX, y: textY }}
-                    className="z-10 relative"
+                    className={cn(
+                      "z-10 relative hover:underline",
+                      pathname === link.path
+                        ?   "underline underline-offset-1 "
+                        : ""
+                    )}
                   >
                     {link.name}
                   </motion.span>
